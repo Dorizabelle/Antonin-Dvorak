@@ -1,0 +1,79 @@
+// Dorizabelle Northecide 
+// September 13, 2019
+// instagram @Dorizabelle
+
+import java.util.Scanner;
+
+public class OddsOfCrash {
+        private static Scanner keyboard = new Scanner(System.in);
+        private static final int CURRENT_YEAR = 2019;
+        
+        public static void main(String[] args) {
+                int driverBirthYear;
+                int driversAge;
+                double oddsOfInvolvement;
+                double distanceToTravel;
+                double numberOfCrashes;
+                
+                //dotted line
+                System.out.println("---------------------------------------------------------------------");
+                System.out.println("Welcome to the odds of involvement in a car accident calculator");
+                System.out.println("---------------------------------------------------------------------");
+
+                //1. Gather data
+                //1.1 Prompt user for the distance traveled in miles
+                System.out.print("Enter the distance (miles) to travel: ");
+                //1.2 Get the value from the user
+                distanceToTravel = keyboard.nextDouble();
+
+                //1.3 Prompt user for their birth year 
+                System.out.print("Enter the birth year of the driver: ");
+                //1.4 Get the users birth year
+                driverBirthYear = keyboard.nextInt();
+
+                //dotted line
+                System.out.println("---------------------------------------------------------------------");
+
+                //2. Perform calculation
+                //2.1 initialize variable
+                numberOfCrashes = 0;
+
+                //2.1 The current year is equal to 2019.
+                driversAge = CURRENT_YEAR - driverBirthYear;
+
+                //2.2 find out the number of crashes in relation to the drivers age
+                if (driversAge > 80) {
+                        numberOfCrashes = 432; 
+                } else if (driversAge <= 15) {
+                        numberOfCrashes = 0;
+                } else if (driversAge <= 19) {
+                        numberOfCrashes = 2162;
+                } else if (driversAge <= 29) {
+                        numberOfCrashes = 1098;
+                } else if (driversAge <= 39) {
+                        numberOfCrashes = 328;
+                } else if (driversAge <= 49) {
+                        numberOfCrashes = 314;
+                } else if (driversAge <= 59) {
+                        numberOfCrashes = 315;
+                } else if (driversAge <= 69) {
+                        numberOfCrashes = 241;
+                } else if (driversAge <= 79) {
+                        numberOfCrashes = 301;
+                }
+
+                // caluclate the odds of involvement
+                oddsOfInvolvement = (distanceToTravel * numberOfCrashes) / 100000000;
+
+                //3. Display results
+                //3.1 Display on the monitor the driver's age 
+                System.out.println("The driver is " + driversAge + " years old.");
+
+                //3.2 Display on the monitor the odds of involvement in a car accident
+                System.out.println("The odds of involvement in a car accident of the driver is " + oddsOfInvolvement);
+               
+                //dotted line
+                System.out.println("---------------------------------------------------------------------");
+
+        }
+}
